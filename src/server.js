@@ -1,4 +1,4 @@
-import pino from 'pino-http';
+const pino = require('pino-http')
 
 const logger = pino().logger;
 const { app } = require('./app');
