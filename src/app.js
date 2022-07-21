@@ -89,6 +89,10 @@ app.post('/api/v1/login', async(req, res) => {
       res.json("These credentials don't seem right... Is this username valid?")
     }
   }
+});
+
+app.post('/test', async(req, res) => {
+  res.send(req.body);
 })
 
 app.post('/api/v1/template', async(req, res) => {
