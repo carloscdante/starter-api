@@ -131,6 +131,17 @@ app.post('/api/v1/template', async(req, res) => {
   }
 });
 
+app.get('/api/v1/templates', async(req, res) => {
+  const templatesDb = await Template.findAll();
+  if (templatesDb == null || templatesDb.length === 0 ||
+    templatesDb === undefined) {
+    res.status(404);
+  } else {
+    res.status(200);
+    res.json(templatesDb);
+  }
+})
+
 app.post('/api/v1/template/get', async(req, res) => {
   const query = req.body;
 
