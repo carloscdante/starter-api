@@ -132,7 +132,7 @@ app.post('/api/v1/template', async(req, res) => {
 });
 
 app.get('/api/v1/templates', async(req, res) => {
-  const templatesDb = await Template.findAll();
+  const templatesDb = await Template.find({});
   if (templatesDb == null || templatesDb.length === 0 ||
     templatesDb === undefined) {
     res.status(404);
